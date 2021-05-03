@@ -1,37 +1,40 @@
-
-let minutes = document.querySelector("#minutes");
-let seconds = document.querySelector("#seconds");
 let start = document.querySelector(".start");
 let stop = document.querySelector(".stop");
+stop.classList.add("hidden")
+let minutes = document.querySelector("#minutes");
+let seconds = document.querySelector("#seconds");
 let timer;
 
-let countDown = function countDown() {
+let countDown = function countdown() {
     seconds.textContent--;
     if(seconds.textContent === "-1") {
         seconds.textContent = 59;
         minutes.textContent--;
-        document.getElementById("start").disabled = true;
     }
-    else if(minutes.textContent === "-1") {
+    if(minutes.textContent === "-1") {
         minutes.textContent = "25";
         seconds.textContent = "00";
         clearInterval(timer);
-        document.getElementById("start").disabled = true;
+        start.classList.remove("hidden");
+        stop.classList.remove("visible");
     }
 }
 
-function resetTimer() {
+function reset() {
     minutes.textContent = "25";
     seconds.textContent = "00";
-    document.getElementById("start").disabled = false;
 }
 
 start.addEventListener("click", function () {
     timer = setInterval(countDown, 1000);
+    start.classList.add("hidden");
+    stop.classList.add("visible");
 });
 
 
 stop.addEventListener("click", function() {
     clearInterval(timer);
-    resetTimer();
+    reset();
+    start.classList.remove("hidden");
+    stop.classList.remove("visible");
 })
