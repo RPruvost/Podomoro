@@ -1,0 +1,38 @@
+body {
+    margin: 350px;
+}
+.timer {
+    width: 212px;
+    margin: 10px 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    height: 75px;    
+}
+
+p {
+    height: 100px;
+    display: inline-block;
+    font-size: 3rem;
+    margin: 10px;
+    text-align: center;
+}
+
+.start {
+    display: block;
+    position: relative;
+    padding: 10px 25px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
+.stop {
+    display: block;
+    position: relative;
+    padding: 10px 25px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
